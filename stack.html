@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="srtack.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+
+        <div id="Maindiv">
+            <div id="Topdiv">
+                <h2 id="Score" style="margin-left: 20px;"></h2>
+                <h1 id="demo">0</h1>
+                <div style="display: flex; gap: 15px;">
+                    <h1 id="LeftTils"></h1>
+                    <p style="margin-right: 20px;">Tiles Left</p>
+                </div>
+
+            </div>
+           <div id="midldiv">
+            <div id="vowels"></div>
+            <div id="conso"></div>
+           </div>
+<div id="Bottomdiv"></div>
+
+        </div>
+
+    </div>
+
+    
+</body>
+</html>
+<script>
+   var vowelArr=[];
+
+   function randomValue(min, max){
+    return Math.floor(Math.random()*(max - min +1)) + min
+   }
+   var Score=0;
+   var tileScore=0;
+
+   let vowel = "AEIOU"
+
+const vowelsdiv=document.getElementById("vowels")
+const consodiv=document.getElementById("conso")
+
+   for(var i=0; i<5; i++){
+    let div= document.createElement("div")
+    let H1= document.createElement("h1")
+    let p= document.createElement("p")
+    let num = randomValue(1,4);
+    Score+=num
+    tileScore+=num
+    H1.innerHTML=vowel[i];
+    p.innerHTML="1"
+    div.append(H1,p)
+    vowelsdiv.append(div)
+
+    vowelArr.push([vowel[i],num])
+   }
+
+   let alpha=[];
+   var result=''
+
+
+
+   let consonants=["B","C","D","F","G","H","J","K","L","M","N","P","Q","R","S","T","V","W","X","Y","Z"]
+    const num01 = new Set();
+    while(num01.size !== 15) {
+
+  
+      let M=(Math.floor(Math.random() * 15) + 1);
+        num01.add(consonants[M])
+  
+   }
+
+let Arr1=[...num01]
+
+
+     let arr=[];
+   
+     for(let j=0;j<Arr1.length;j++)
+     {
+  
+        let ans=[];
+       
+        ans.push(Arr1[j])
+
+        arr.push(ans)
+
+     }
+
+   for(var j=1; j<15; j++){
+    let div= document.createElement("div");
+    let H1= document.createElement("h1");
+    let p= document.createElement("p");
+    let num01 = randomValue(1,4);
+    Score+=num01;
+    tileScore+=num01;
+
+    alpha.push([Arr1[j],num01])
+    H1.innerHTML=Arr1[j];
+    if(Arr1[j]==="L"||Arr1[j]==="N"||Arr1[j]==="S"||Arr1[j]==="T"||Arr1[j]==="R"){
+        p.innerText="1" 
+        Score+=1
+    }
+    if(Arr1[j]==="D"||Arr1[j]==="G"){
+        p.innerHTML="2" 
+        Score+=2
+    }
+    if(Arr1[j]==="B"||Arr1[j]==="C"||Arr1[j]==="M"||Arr1[j]==="P"){
+        p.innerHTML="3" 
+        Score+=3
+    }
+    if(Arr1[j]==="F"||Arr1[j]==="H"||Arr1[j]==="V"||Arr1[j]==="W"||Arr1[j]==="Y"){
+        p.innerHTML="4" 
+        Score+=4
+    }
+    if(Arr1[j]==="K"){
+        p.innerHTML="5" 
+        Score+=5
+    }
+    if(Arr1[j]==="J"||Arr1[j]==="X"){
+        p.innerHTML="8" 
+        Score+=8
+    }
+    if(Arr1[j]==="Q"||Arr1[j]==="Z"){
+        p.innerHTML="10" 
+        Score+=10
+    }
+    
+   
+    div.append(H1,p)
+    consodiv.append(div)
+    
+   }
+   console.log("score",Score)
+
+let Scor=document.getElementById("Score")
+Scor.append(Score)
+
+let LeftTiles=document.getElementById("LeftTiles")
+LeftTils.append(tileScore)
+
+
+
+
+
+
+// Timer Start
+
+var LeftTM = 99;
+var CountTimer = setInterval(function(){
+  if(LeftTM <= 0){
+    clearInterval(CountTimer);
+    document.getElementById("demo").innerHTML = "Finished";
+  } else {
+    document.getElementById("demo").innerHTML = LeftTM;
+  }
+  LeftTM -= 1;
+}, 1000);
+
+</script>

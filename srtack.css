@@ -1,0 +1,63 @@
+#Maindiv{
+    border: 1px solid black;
+    width: 400px;
+    height: 690px;
+    margin: auto;
+    background-color: darkslategray
+}
+#Topdiv {
+   
+    background-color: teal;
+    color: white;
+    width: 398px;
+    height: 70px;
+    margin: auto; 
+    display: flex;
+column-gap: 100px;
+display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#vowels{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+#vowels > div{
+   border: 1px solid blueviolet;
+   width: 70px;
+   height: 100px;
+   column-gap: 10px;
+   margin: auto;
+   text-align: center;
+  margin-top: 10px;
+  background-color: white;
+}
+#conso{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+}
+#conso > div{
+   border: 1px solid pink;
+   width: 70px;
+   height: 100px;
+   column-gap: 10px;
+   row-gap: 10px;
+   margin: auto;
+   text-align: center;
+   margin-top: 10px;
+   background-color: white;
+}
+#midldiv{
+    background-color: darkslategray;
+    padding-bottom: 10px;
+}
+#Bottomdiv{
+    background-color: teal;
+    color: white;
+    width: 398px;
+    height: 70px;
+    margin: auto; 
+    display: flex;
+column-gap: 100px;
+display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
